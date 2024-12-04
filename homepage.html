@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queens Residences 3</title>
+    <link rel="icon" href="Icon Images/logo2.jpg">
+    <link rel="stylesheet" href="homepage.css">
+    <script src="homepage.js"></script>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <!-- Hamburger Menu Icon -->
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            &#9776;
+        </button>
+
+        <!-- Logo -->
+        <h1 class="logo">
+            <img src="Icon Images/logo2.jpg" alt="Logo" width="50">
+        </h1>
+
+        <!-- Navigation Menu -->
+        <nav class="nav hidden">
+            <a onclick="scrollToSection('home')">Home</a>
+            <a onclick="scrollToSection('about-us')">About us</a>
+            <a onclick="scrollToSection('Plan')">Plans</a>
+            <a onclick="scrollToSection('LayoutPlan')">Layout Plan</a>
+            <a onclick="scrollToSection('strategic-location')">Strategic Location</a>
+            <a onclick="scrollToSection('gallery')" >Gallery</a>
+            <a onclick="scrollToSection('contact-us')">Contact Us</a>
+        </nav>
+    </div>
+</header>
+
+<script>
+//Bring To Function -> function to bring use to section selected
+function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function callWhatsapp() {
+    const whatsappNumber = "60164771238"; 
+    const message = encodeURIComponent("Hello, I would like to get more information about the Project and E-Brochure?"); 
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank'); 
+}
+
+</script>
+
+<script>
+// Get the menu toggle button and the navigation menu
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav');
+
+// Add click event listener to toggle menu visibility
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+});
+</script>
+
+<!-- Advertisement Section-->
+
+<div class="adBackground" id="advertisement" onclick="closeAd()">
+
+
+    <div class="ad">
+        <p class="closeAd" onclick="closeAd()">X</p>  
+        <img src="LayoutPlan/ad.png" width="40%" height="fit-content" class="adImage"> <!-- put your advertisement picture -->
+    </div>
+    <div class="adButtonDiv">
+        <button onclick="callWhatsapp()" class="btn-advertisement"> <!-- button link to whatsapp -->
+            Book your dream <br> home now! 
+            <img src="Icon Images/whatsapp2.png" width="10%" class="whatsappIcon"> <!-- WhatsApp button icon, if dont have just delete the img part -->
+        </button>
+    </div>
+</div>
+
+<script>  
+//whatsapp contact
+function callWhatsapp() {
+    const whatsappNumber = "60164771238"; // Replace with actual WhatsApp number
+    const message = encodeURIComponent("Hello, I would like to get more information about Queens Waterfront 3?"); // Customize this message
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+}
+
+//close advertisement
+function closeAd() {
+    document.getElementById("advertisement").style.display = "none";
+
+}
+</script>
+
+
+
+   <!-- Hero Slider -->
+<section class="hero-slider" id="home">
+    <div class="overlay">
+      <div class="box-color"> 
+         <div class="hero-content">    
+            <h2 id="hero-title">Find Your Dream Home</h2>
+            <p id="hero-text">We understand the best modern spaces for maximum comfort.</p>
+            <section class="stats">
+                <div class="stat">
+                    <h3>532</h3>
+                    <p>Total Units</p>
+                </div>
+                <div class="stat">
+                    <h3>79</h3>
+                    <p>Units Available</p>
+                </div>
+                <div class="stat">
+                    <h3>85%</h3>
+                    <p>Unit Sold</p>
+                </div>
+            </section>        
+        </div>
+       </div>
+    </div>
+</section>
+
+<!-- JavaScript for Hero Slider -->
+<script>
+    const slides = [
+        {
+            title: "Find Your Dream Home",
+            text: "We understand the best modern spaces for maximum comfort.",
+            background: "url('path/to/image1.jpg')"
+        },
+        {
+            title: "Discover Modern Living Spaces",
+            text: "Explore our wide range of properties tailored for comfort and luxury.",
+            background: "url('path/to/image2.jpg')"
+        },
+        {
+            title: "Your Perfect Neighborhood Awaits",
+            text: "Find the ideal community to call home, with beautiful surroundings.",
+            background: "url('path/to/image3.jpg')"
+        }
+    ];
+
+    let currentSlide = 0;
+    const heroSlider = document.querySelector(".hero-slider");
+    const heroTitle = document.getElementById("hero-title");
+    const heroText = document.getElementById("hero-text");
+
+    function updateSlide() {
+        const slide = slides[currentSlide];
+        heroSlider.style.backgroundImage = slide.background;
+        heroTitle.textContent = slide.title;
+        heroText.textContent = slide.text;
+        currentSlide = (currentSlide + 1) % slides.length;
+    }
+
+    setInterval(updateSlide, 5000);
+    updateSlide(); // Initialize the first slide
+</script>
+
+<!-- About Us -->
+<section class="about-us" id="about-us">
+    <div class="content">
+        <h3>About Us</h3>
+        <p>
+            Welcome to <strong>Queens Residences 3</strong>, a sanctuary nestled in the serene bayfront setting of Pulau Jerejak. This freehold development seamlessly blends modern living with the natural beauty of Penang's coastline.
+        </p>
+        <p>
+            Featuring <strong>532 exclusive residential units</strong>, Queens Residences 3 offers five thoughtfully designed layouts ranging from <strong>950 sq.ft. to 1,400 sq.ft.</strong>, catering to diverse lifestyle needs. Whether you desire spacious units with panoramic sea views or cozy, functional spaces, there’s a home here tailored for you.
+        </p>
+        <p>
+            Enjoy breathtaking vistas of the sea and the iconic Penang Bridge from select units. Every detail has been meticulously crafted—from the strategic placement of facilities to open vistas—ensuring a seamless connection to the picturesque surroundings.
+        </p>
+        <p>
+            Embrace the tranquility of coastal living without compromising on contemporary comforts at Queens Residences 3.
+        </p>
+    </div>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.5426380155855!2d100.30814327474337!3d5.333784994644803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac0f420474a95%3A0x64973d0494e9ae9e!2sQueens%20Waterfront!5e0!3m2!1szh-CN!2smy!4v1732259509523!5m2!1szh-CN!2smy"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+
+
+
+<section class="Plans" id="Plan">
+    <h2>Plans</h2>
+
+    <!-- Master Plan -->
+    <div class="plan-category">
+        <h2>Master Plan</h2>
+        <div class="plan-category-images">
+            <img src="MasterPlan/MasterPlan1.jpg" alt="Master Plan 1">
+            <img src="MasterPlan/MasterPlan2.jpg" alt="Master Plan 2">
+        </div>
+        <ul>
+            <li>Multisport Arena</li>
+            <li>Aquatic Center</li>
+            <li>Football Field</li>
+            <li>British International School</li>
+            <li>Marina Bay (Completed by 2027)</li>
+            <li>LRT (Completed by 2030)</li>
+        </ul>
+    </div>
+
+    <!-- Actual Site -->
+    <div class="plan-category">
+        <h2>Actual Site</h2>
+        <div class="plan-category-images">
+            <img src="Actual_Site/ActualSite.jpg" alt="Actual Site 1">
+            <img src="Actual_Site/ActualSite1.jpg" alt="Actual Site 2">
+        </div>
+    </div>
+
+    <!-- Site Plan -->
+    <div id="site-plan">
+        <h2>Site Plan</h2>
+        <img src="LayoutPlan/SitePlan.jpg" alt="Site Plan">
+    </div>
+</section>
+
+
+
+
+
+   <!-- Layout Plan Section -->
+<section class="property-listings" id="LayoutPlan">
+    <h2>Layout Plan</h2>
+    <p>
+        Queens Residences captivates with its unique nautical-inspired theme, offering residents an exceptional waterfront lifestyle. 
+        Highlights include charming outdoor dining spaces, a stunning marina bay, 
+        and a beautiful 50-foot promenade, 
+        all designed to elevate the living experience with breathtaking coastal views.
+    </p>
+
+    <div class="layout-container">
+        <!-- Tabs and Image Section -->
+        <div class="tabs-and-image">
+            <!-- Tabs Navigation -->
+            <div class="tabs">
+                <button class="tab-button active" data-tab="tab1">Plan A</button>
+                <button class="tab-button" data-tab="tab2">Plan B</button>
+                <button class="tab-button" data-tab="tab3">Plan B1</button>
+                <button class="tab-button" data-tab="tab4">Plan C</button>
+                <button class="tab-button" data-tab="tab5">Plan D</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content-container">
+                <div class="tab-content active" id="tab1">
+                    <div class="property-card">
+                        <img src="LayoutPlan/LayoutPlanA.jpg" alt="Layout Plan A" onclick="openLightbox(this)">
+                        <h3>Layout Plan A</h3>
+                    </div>
+                </div>
+                <div class="tab-content" id="tab2">
+                    <div class="property-card">
+                        <img src="LayoutPlan/LayoutPlanB.jpg" alt="Layout Plan B" onclick="openLightbox(this)">
+                        <h3>Layout Plan B</h3>
+                    </div>
+                </div>
+                <div class="tab-content" id="tab3">
+                    <div class="property-card">
+                        <img src="LayoutPlan/LayoutPlanB1.jpg" alt="Layout Plan B1" onclick="openLightbox(this)">
+                        <h3>Layout Plan B1</h3>
+                    </div>
+                </div>
+                <div class="tab-content" id="tab4">
+                    <div class="property-card">
+                        <img src="LayoutPlan/LayoutPlanC.jpg" alt="Layout Plan C"  onclick="openLightbox(this)">
+                        <h3>Layout Plan C</h3>
+                    </div>
+                </div>
+                <div class="tab-content" id="tab5">
+                    <div class="property-card">
+                        <img src="LayoutPlan/LayoutPlanD.jpg" alt="Layout Plan D" onclick="openLightbox(this)">
+                        <h3>Layout Plan D</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Details Section -->
+        <div class="details">
+            <h3>Own a Seafront Luxury Resort from RM3750 MONTHLY</h3>
+            <ul class="icon-list">
+                <li><img src="Icon Images/tick.png" alt="Tick">3 Bedroom, 2 Bathroom</li>
+                <li><img src="Icon Images/tick.png" alt="Tick">28 units per floor</li>
+                <li><img src="Icon Images/tick.png" alt="Tick">Ceiling Height 10ft</li>
+                <li><img src="Icon Images/tick.png" alt="Tick">Residential Title</li>
+                <li><img src="Icon Images/tick.png" alt="Tick">Free 4 Air-Conditioners</li>
+                <li><img src="Icon Images/tick.png" alt="Tick">2 Car Parks</li>
+                <li><img src="Icon Images/tick.png" alt="Tick">2 Hot Water Systems</li>
+                <li><img src="Icon Images/tick.png" alt="Tick">Free Legal Fees, Stamp Duty</li>
+            </ul>
+        </div>
+    </div>
+    
+    <video class="center-video" width="750" height="450" controls>
+        <source src="Video/Q3-Full-Version-Final-4K.mp4" type="video/mp4">
+    </video>
+    
+
+   
+</section>
+
+
+
+<script> 
+// Tab Navigation Functionality
+document.querySelectorAll('.tab-button').forEach((button) => {
+    button.addEventListener('click', () => {
+        // Remove active class from all tab buttons and content
+        document.querySelectorAll('.tab-button').forEach((btn) => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach((content) => content.classList.remove('active'));
+
+        // Add active class to the clicked tab button
+        button.classList.add('active');
+        
+        // Show the corresponding tab content
+        const tabId = button.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+    });
+});
+</script>
+
+<!-- Strategic Location Section-->
+    <section class="strategic-location">
+        <h3>Strategic Location</h3>
+        <div class="location-content">
+            
+            <p>Conveniently located between the Queensbay Mall roundabout and the Gold Coast Condo roundabout, this prime spot ensures exceptional accessibility. Queensbay Mall is just a quick 2-minute drive away, 
+                offering a fantastic selection of shopping and dining experiences.
+
+            For travelers, Penang International Airport is only 10 minutes away, 
+            providing effortless connections to both domestic and international destinations. Additionally, 
+            the Penang Second Bridge is easily accessible within a short 15-minute drive.</p>
+
+            <div class="location-info">
+                <h4>Connectivity</h4>
+                <ul class="connectivity-list">
+                    <li><span class="icon">&#128652;</span> Sg. Nibong Bus Terminal – 1.4 km (approx. 3-5 mins drive)</li>
+                    <li><span class="icon">&#127753;</span> Penang Bridge – 3 km (approx. 5-10 mins drive)</li>
+                    <li><span class="icon">&#128747;</span> Penang Second Bridge – 8 km (approx. 10-15 mins drive)</li>
+                    <li><span class="icon">&#9992;&#65039;</span> Penang International Airport – 9 km (approx. 15-20 mins drive)</li>
+                </ul>
+    
+                <h4>Public Amenities</h4>
+                <ul>
+                    <li>Bukit Jambul Golf Club – 4 km (approx. 8-10 mins drive)</li>
+                    <li>SPICE (Subterranean Penang Int'l Convention & Exhibition) – 5 km (approx. 10 mins drive)</li>
+                </ul>
+    
+                <h4>Shopping & Dining</h4>
+                <ul>
+                    <li>Queensbay Mall – 100 m (approx. 1-2 mins walk)</li>
+                    <li>Bukit Jambul Complex – 2 km (approx. 5 mins drive)</li>
+                    <li>Giant Hypermarket – 3.1 km (approx. 8 mins drive)</li>
+                    <li>Sunshine Square – 4.5 km (approx. 10 mins drive)</li>
+                </ul>
+                
+                
+            </div>
+    
+            <!-- Right Side Image -->
+            <div class="location-image">
+                <img src="Location/LocationMap.jpg" alt="Map showing location connectivity" onclick="openLightbox(this)">
+            </div>
+        </div>
+    </section>
+    
+
+
+    <!-- How It Works Section -->
+<section class="how-it-works">
+  
+    <div class="steps">
+        <div class="step">
+            <img src="Icon Images/Car.png" alt="Car">
+            <h3>Short Duration to Other Destination</h3>
+        </div>
+
+        <div class="step">
+            <img src="Icon Images/seafont.png" alt="Seafront">
+            <h3>Unique Seafront View</h3>
+        </div>
+
+        <div class="step">
+            <img src="Icon Images/Facilities.png" alt="Facilities">
+            <h3>Great Facilities & Work Space</h3>
+        </div>
+
+        <div class="step">
+            <img src="Icon Images/Freehold.jpg" alt="Freehold">
+            <h3>Freehold</h3>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Gallery -->
+    <section id="gallery" class="gallery-section" id="gallery">
+        <h2>Gallery</h2>
+        <p>Explore our beautiful properties through the gallery below.</p>
+        
+        <div class="gallery-grid">
+            <img src="Gallery/Gallery.jpg" alt="Property Image 1" onclick="openLightbox(this)">
+            <img src="Gallery/Gallery1.jpg" alt="Property Image 2" onclick="openLightbox(this)">
+            <img src="Gallery/Gallery2.jpg" alt="Property Image 3" onclick="openLightbox(this)">
+            <img src="Gallery/Gallery3.jpg" alt="Property Image 4" onclick="openLightbox(this)">
+            <img src="Gallery/Gallery4.jpg" alt="Property Image 5" onclick="openLightbox(this)">
+            <img src="Gallery/Gallery5.jpg" alt="Property Image 6" onclick="openLightbox(this)">
+            <img src="Gallery/Gallery6.jpg" alt="Property Image 7" onclick="openLightbox(this)">
+            <img src="Gallery/Gallery7.jpg" alt="Property Image 8" onclick="openLightbox(this)">
+            <img src="Gallery/Gallery8.jpg" alt="Property Image 9" onclick="openLightbox(this)">
+            <img src="Gallery/Gallery9.jpg" alt="Property Image 10" onclick="openLightbox(this)">
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-image">
+        </div>
+   
+     <section id="facilities" class="facilities-section">
+        <h2>Facilities</h2>
+        <p>Explore our wide range of facilities designed for your comfort and lifestyle.</p>
+        <div class="facilities-container">
+            <img src="Facilities/FacilitiesMaps.jpg" alt="Facilities Map">
+        </div>
+      </section>
+
+
+</section>
+
+<script>
+    function openLightbox(image) {
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightbox-image").src = image.src;
+    }
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+    
+   
+ <!-- Contact Us Section -->
+<section id="contact-us" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>The unit are limited, get yours fast!!!</p>
+    <p>Contact Us Now for E-Brochure and More Details!</p>
+   
+
+    <div class="whatsapp-section">
+        <button onclick="callWhatsapp()">
+            Whatsapp Us
+        </button>
+    </div>
+
+    
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="left-section">
+            <img src="Icon Images/logo2.jpg" class="logo" alt="Ideal Property Group Logo">
+            <!-- Navigation Menu -->
+            <nav class="footer-nav">
+                <a onclick="scrollToSection('home')">Home</a>
+                <a onclick="scrollToSection('about-us')">About Us</a>
+                <a onclick="scrollToSection('Plan')">Plans</a>
+                <a onclick="scrollToSection('LayoutPlan')">Layout Plan</a>
+                <a onclick="scrollToSection('gallery')">Gallery</a>
+                <a onclick="scrollToSection('contact-us')">Contact Us</a>
+            </nav>
+        </div>
+        <div class="right-section">
+            <div class="social-media">
+                <a href="https://www.facebook.com/iqi.penang/"><img src="Icon Images/facebook.jpg" alt="Facebook" class="social-icon"></a>
+                <a href="https://wa.me/+60136877878" target="_blank" id="whatsapp-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" />
+                </a>
+
+                <a onclick="callWhatsapp()"><img src="Icon Images/Email.png" alt="Email" class="social-icon"></a>
+                <a onclick="callWhatsapp()"><img src="Icon Images/whatsapp1.png" alt="WhatsApp" class="social-icon"></a>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.5426380155855!2d100.30814327474337!3d5.333784994644803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac0f420474a95%3A0x64973d0494e9ae9e!2sQueens%20Waterfront!5e0!3m2!1szh-CN!2smy!4v1732259509523!5m2!1szh-CN!2smy" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+    <p class="footer-text">2024 &copy; Realty All rights reserved.</p>
+</footer>
+
+
+</body>
+</html>
+

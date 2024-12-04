@@ -1,0 +1,1383 @@
+/* Reset default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+
+
+    #whatsapp-icon {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 9999; 
+}
+
+#whatsapp-icon img {
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease;
+}
+
+#whatsapp-icon:hover img {
+    transform: scale(1.1); 
+}
+}
+
+/* General Styles */
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color:white;
+}
+
+p {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Header */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header .nav a {
+    color: #fff;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.header .nav a:hover {
+    text-decoration: underline;
+}
+
+/* Basic Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: rgb(15, 48, 71);
+    position: sticky; /* Sticky header */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hamburger Menu Icon */
+.menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+    display: none; /* Hidden by default for larger screens */
+}
+
+/* Logo */
+.logo img {
+    width: 50px;
+}
+
+/* Navigation Menu */
+.nav {
+    display: flex;
+    flex-direction: row; /* Horizontal for larger screens */
+    gap: 20px;
+    background-color: transparent; /* No background for larger screens */
+    padding: 0;
+}
+
+/* Links */
+.nav a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles: Small screens */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show hamburger menu */
+    }
+
+    .nav {
+        display: none; /* Hide navigation by default */
+        flex-direction: column; /* Stack links vertically */
+        background-color: lightblue; /* Add a background for smaller screens */
+        position: absolute;
+        top: 100%; /* Position below the header */
+        right: 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav.show {
+        display: flex; /* Show navigation when toggled */
+    }
+}
+
+
+/* Advertisement Section (Background Styling)*/
+.adBackground {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    pointer-events: all;
+    position: fixed;
+    z-index: 2;
+    text-align: center;
+    vertical-align: middle;
+    transition: 0.5s linear;
+    top: 0;
+}
+
+.ad{
+    margin-top: 10%;
+}
+
+/* Advertisement Image */
+.ad img {
+    width: 100%; /* Make the image take up full width of its container */
+    max-width: 500px; /* Prevent it from becoming too large */
+    height: auto; /* Maintain the aspect ratio */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure the image centers within its parent */
+    padding: 10px; /* Add some space around the image */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+
+.closeAd {
+    font-size: 15px;
+    transition: 0.2s linear;
+    cursor: pointer;
+    font-family: cursive;
+    color: black;
+    position: fixed;
+    right: 32%;
+}
+
+.closeAd:hover {
+    color: red;
+    transform: scale(1.2);
+}
+
+/* Advertisement Button Styling */
+.btn-advertisement {
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 250px; 
+    height: 60px;
+    padding: 8px;
+    font-size: 1em;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background-image: linear-gradient(90deg, #FF5F6D, #FFC371); 
+    position: relative;
+}
+
+.btn-advertisement:hover {
+    transform: scale(1.1); 
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .ad img {
+        max-width: 90%; 
+    }
+
+
+    .btn-advertisement {
+        width: 200px; /* Reduce button size for smaller screens */
+        height: 50px;
+        font-size: 0.9em; /* Reduce text size */
+    }
+
+    .closeAd {
+        font-size: 16px; /* Adjust close button size */
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .ad img {
+        max-width: 100%; /* Allow the image to take the full screen width for phones */
+    }
+
+
+    .btn-advertisement {
+        width: 180px;
+        height: 45px;
+        font-size: 0.8em;
+    }
+
+    .closeAd {
+        font-size: 14px; /* Further adjust close button for very small screens */
+    }
+}
+
+/* Hero Slider */
+
+.hero-slider {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: slideBackground 15s infinite; /* Animation for background change */
+}
+
+@keyframes slideBackground {
+    0% {
+        background-image: url('Gallery/Gallery.jpg');
+    }
+    10% {
+        background-image: url('Gallery/Gallery1.jpg');
+    }
+    20% {
+        background-image: url('Gallery/Gallery2.jpg');
+    }
+    30% {
+        background-image: url('Gallery/Gallery3.jpg'); /* Loop back to the first image */
+    }
+    40%{
+        background-image: url('Gallery/Gallery4.jpg');
+    }
+    50%{
+        background-image: url('Gallery/Gallery5.jpg');
+    }
+    60%{
+        background-image: url('Gallery/Gallery6.jpg');
+    }
+    70%{
+        background-image: url('Gallery/Gallery7.jpg');
+    }
+    80%{
+        background-image: url('Gallery/Gallery8.jpg');
+    }
+    100%{
+        background-image: url('Gallery/Gallery9.jpg');
+    }
+
+}
+
+/* Overlay to improve text readability */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+
+.nav-bar {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.stat h3 {
+    font-size: 2em;
+}
+
+.stat p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.box-color div {
+  background: linear-gradient(
+    rgba(173, 216, 230, 0.9),
+    rgba(173, 216, 230, 0.7)
+  );
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* About Us Section */
+
+.about-us {
+    position: relative; /* Needed for the pseudo-element */
+    background: url('Gallery/Gallery.jpg') center/cover no-repeat; /* Set the background image */
+    padding: 60px 20px;
+    margin: 0 auto;
+    color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Ensure no overflowing content */
+    z-index: 1; /* Lower than the advertisement when it's active */
+}
+
+.about-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
+    z-index: 1; /* Place the overlay below the content */
+}
+
+.about-us .content {
+    position: relative;
+    z-index: 2; /* Ensure the content appears above the overlay */
+    background-color: rgba(173, 216, 230, 0.9); /* Light blue with slight transparency */
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto 30px; /* Center the box and add spacing below */
+}
+
+.about-us h3 {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-us p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.8;
+}
+
+.about-us strong {
+    color: #004aad;
+    font-weight: bold;
+}
+
+/* Map container styling */
+.map-container {
+    position: relative;
+    z-index: 2; /* Ensure it stays above the overlay */
+    background-color: rgba(255, 255, 255, 0.9); /* Light white background to distinguish from dark overlay */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a cleaner look */
+    max-width: 800px;
+}
+
+.map-container iframe {
+    width: 100%; /* Make the map responsive */
+    height: 400px; /* Increase the height for better visibility */
+    border: 0; /* Remove border */
+    border-radius: 8px; /* Match the container's rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for aesthetics */
+}
+
+@media screen and (max-width: 768px) {
+    .about-us {
+        padding: 40px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .map-container iframe {
+        height: 300px; /* Reduce map height for smaller screens */
+    }
+}
+
+
+
+
+
+
+/* Master Plan, Site Plan, and Actual Site Section */
+/* General Plans Section Styling */
+.Plans {
+    padding: 40px 20px;
+    background-color: #e3f2fd;
+    font-family: Arial, sans-serif;
+}
+
+.Plans > h2 {
+    font-size: 36px;
+    color: #0f3047;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Plan Category */
+.plan-category {
+    width: 100%;
+    max-width: 1250px; /* Expanded overall width */
+    margin: 40px auto; /* Added spacing between sections */
+    text-align: center;
+    background-color: #0f3047;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Plan Category Heading */
+.plan-category h2 {
+    font-size: 32px; /* Enlarged for emphasis */
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Plan Category Images */
+.plan-category-images {
+    display: flex;
+    gap: 20px; /* Space between images */
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.plan-category img {
+    width: 80%; /* Further enlarged image size */
+    max-width: 550px; /* Bigger maximum size */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+/* Image Hover Effect */
+.plan-category img:hover {
+    transform: scale(1.05);
+}
+
+/* List (ul) Styling */
+.plan-category ul {
+    color: white;
+    text-align: left; /* Aligns the text to the left for readability */
+    margin: 20px auto;
+    max-width: 550px; /* Matches the image width for consistency */
+    line-height: 1.8; /* Improved spacing between list items */
+    padding-left: 20px; /* Adds space for list bullets */
+    list-style-type: disc; /* Changes to a disc-style bullet */
+}
+
+/* Site Plan Section */
+#site-plan {
+    max-width: 1250px;
+    margin: 40px auto;
+    text-align: center;
+    background-color: #0f3047;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#site-plan h2 {
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#site-plan img {
+    width: 90%; /* Slightly larger */
+    max-width: 1100px; /* Maximum width for visibility */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+/* List (ul) Styling */
+.plan-category ul {
+    color: white;
+    text-align: left; /* Text aligns to the left for readability */
+    margin: 20px auto;
+    max-width: 600px; /* Slightly wider for balance with images */
+    padding: 15px 30px; /* Adds padding inside the list area */
+    line-height: 2; /* Improves spacing between list items */
+    border: 2px solid #ffffff; /* Adds a subtle border for focus */
+    border-radius: 8px; /* Smooth edges for a modern look */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly translucent background for contrast */
+    list-style-type: disc; /* Ensure disc bullets are shown */
+    list-style-position: inside; /* Ensures the bullets are inside the padding */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Adds depth to the list box */
+}
+
+/* Ensure Bullets (Force Specificity) */
+.plan-category ul li {
+    font-size: 18px; /* Clear and readable size */
+    margin-bottom: 10px; /* Adds spacing between list items */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    list-style-type: disc; /* Ensure individual <li> items show bullets */
+}
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .plan-category img {
+        width: 90%; /* Full width on mobile */
+    }
+
+    #site-plan img {
+        width: 90%; /* Full width on mobile */
+    }
+
+    .plan-category ul {
+        text-align: center; /* Center align lists for smaller screens */
+        padding-left: 0; /* Removes padding on smaller devices */
+    }
+}
+
+
+
+/* Layout Plans Section */
+.property-listings {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: #f0f8ff;
+}
+
+.property-listings h2 {
+    font-size: 2rem;
+    color: #004aad;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.property-listings p {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 30px;
+    max-width: 800px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Layout Container */
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Tabs Navigation */
+.tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    background-color: blue;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 100px;
+    white-space: nowrap;
+}
+
+.tab-button.active {
+    background-color: lightblue;
+    color: white;
+}
+
+.tab-button:hover {
+    background-color: blue;
+}
+
+
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    width: 100%;
+    max-width: 800px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Tabs and Image Container */
+.tabs-and-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    text-align: center;
+}
+
+.tabs-and-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.property-card {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.property-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #eee;
+}
+
+/* Icon List */
+.icon-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.icon-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.icon-list img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+/* Details Section */
+.details {
+    flex: 1;
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.details h3 {
+    font-size: 1.5rem;
+    color: #004aad;
+    margin-bottom: 15px;
+}
+
+.details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.details li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+.center-video {
+    display: block; /* Ensures it behaves like a block-level element */
+    margin: 20px auto; /* Centers the video horizontally */
+    max-width: 100%; /* Ensures responsiveness on smaller screens */
+    height: auto; /* Maintains aspect ratio */
+}
+
+
+/* Responsive Adjustments for Large Screens */
+@media (min-width: 1024px) {
+    .layout-container {
+        flex-direction: row; /* Place items side by side */
+        gap: 40px; /* Adjust spacing */
+        text-align: left; /* Align text to the left for larger screens */
+    }
+
+    .tabs-and-image {
+        flex: 1;
+        max-width: 60%; /* Limit image and tabs section width */
+    }
+
+    .details {
+        flex: 1;
+        max-width: 40%; /* Limit details section width */
+        text-align: left; /* Align details text to the left */
+    }
+
+    .tabs {
+        justify-content: flex-start; /* Align tabs to the left */
+    }
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .layout-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .tabs-and-image {
+        align-items: center;
+    }
+
+    .details {
+        text-align: center;
+    }
+}
+
+
+/* How It Works Section */
+.how-it-works {
+    padding: 60px 20px; /* Increased padding for more space */
+    background-color: #333;
+    color: black;
+    text-align: center;
+}
+
+/* Strategic Location Section */
+.strategic-location p {
+    font-size: 1rem; 
+    line-height: 1.6; 
+    color: #444; 
+    margin-bottom: 20px; 
+    text-align: justify; 
+}
+
+.strategic-location {
+    padding: 20px;
+    background-color:whitesmoke;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.strategic-location h3 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Layout for Left and Right Alignment */
+.location-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.location-info {
+    flex: 1;
+    max-width: 60%;
+}
+
+.location-image {
+    flex: 1;
+    max-width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+/* Styling for Lists and Icons */
+.connectivity-list, .location-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.connectivity-list li, .location-info ul li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    font-size: 1.2rem;
+    color: #004aad;
+    margin-right: 8px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+
+/* How It Works Section */
+.how-it-works {
+    padding: 60px 20px; /* Increased padding for more space */
+    background-color: #333;
+    color: black;
+    text-align: center;
+}
+
+/* How It Works Section Heading */
+.how-it-works h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 40px; /* Adds space below the heading */
+    text-transform: uppercase; /* Optional: Adds emphasis */
+}
+
+/* Steps Container */
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; /* Adds space between each step */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center; /* Centers the steps */
+}
+
+/* Step Item */
+.step {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px; /* Reduced padding */
+    width: calc(20% - 20px); /* Smaller width */
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Step Heading */
+.step h3 {
+    font-size: 18px; /* Smaller font size */
+    margin-top: 15px; /* Reduced margin */
+}
+
+/* Step Image */
+.step img {
+    max-width: 80%; /* Slightly smaller image */
+    height: auto;
+    border-radius: 6px; /* Slightly less rounded corners */
+    margin-bottom: 15px; /* Reduced space below image */
+}
+
+/* Steps Container */
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Reduced gap between items */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .step {
+        width: calc(40% - 20px); /* Slightly smaller for tablet */
+        margin-bottom: 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .step {
+        width: calc(90% - 20px); /* Smaller on mobile */
+    }
+}
+
+
+
+/* Testimonials */
+.testimonials {
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.testimonial {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 500px;
+}
+
+
+/* Gallery Section */
+.gallery-section {
+    background-color: lightskyblue;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox Modal */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Facilities Section */
+.facilities-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 0; /* Adjust padding as needed */
+}
+
+.facilities-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff; /* White text for better visibility */
+}
+
+.facilities-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.facilities-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px; 
+}
+
+.facilities-container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; 
+}
+
+.facilities-legend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    text-align: left; /* Left-align text inside the legend */
+}
+
+.facilities-legend h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+
+
+/* Contact Section */
+/* Important Notice Styling */
+.important-notice {
+    background-color: #fffae6;
+    border: 1px solid #ffd700;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+    max-width: 800px;
+}
+
+.important-notice h3 {
+    font-size: 1.3rem;
+    color: #d35400;
+    margin-bottom: 10px;
+}
+
+.important-notice img {
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.important-notice p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-section {
+    background-color: #f9f9f9;
+    padding: 40px;
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#contact-us h2 {
+    color:black
+    }
+    
+#contact-us p{
+    color: black;
+}
+
+
+.contact-forms-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    flex: 1 1 300px; /* Flexible with a minimum width of 300px */
+    max-width: 420px;
+}
+
+.contact-form h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+button[type="submit"],
+button {
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #004aad;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button[type="submit"]:hover,
+button:hover {
+    background-color: #003377;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+/* WhatsApp Section */
+.whatsapp-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.whatsapp-section p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.whatsapp-section button {
+    background-color: #25d366; /* WhatsApp green color */
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.whatsapp-section button:hover {
+    background-color: #1da851; /* Darker green on hover */
+}
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .contact-forms-container {
+        flex-direction: column;
+    }
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: rgb(15, 48, 71);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px; /* Added gap between elements */
+}
+
+/* Left Section */
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.left-section .logo {
+    width: 120px;
+    height: auto;
+}
+
+/* Footer Navigation */
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+    color: #ffa500; /* Highlight color */
+    transform: scale(1.05); /* Subtle hover effect */
+}
+
+/* Social Media Icons */
+.social-media a {
+    margin-right: 10px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    background-color: lightblue;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2); /* Slight brightness effect on hover */
+}
+
+/* Map Container */
+.map-container iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+}
+
+/* Footer Text */
+.footer-text {
+    margin-top: 20px;
+    font-size: 0.875rem;
+    color: whitesmoke;
+    text-align: center; /* Ensure footer text is centered */
+}
+
+
+#whatsapp-icon {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 9999; 
+}
+
+#whatsapp-icon img {
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease;
+}
+
+#whatsapp-icon:hover img {
+    transform: scale(1.1); 
+}
+
+
+
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-section,
+    .right-section {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .map-container iframe {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-nav a {
+        font-size: 0.875rem; /* Smaller font size on very small screens */
+    }
+}
+
+
