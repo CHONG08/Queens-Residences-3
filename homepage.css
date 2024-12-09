@@ -413,21 +413,44 @@ body {
 /* Map container styling */
 .map-container {
     position: relative;
-    z-index: 2; /* Ensure it stays above the overlay */
-    background-color: rgba(255, 255, 255, 0.9); /* Light white background to distinguish from dark overlay */
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     padding: 20px;
     margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a cleaner look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 800px;
+    text-align: center; /* Center-align content */
 }
 
 .map-container iframe {
-    width: 100%; /* Make the map responsive */
-    height: 400px; /* Increase the height for better visibility */
-    border: 0; /* Remove border */
-    border-radius: 8px; /* Match the container's rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for aesthetics */
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px; /* Add spacing below the map */
+}
+
+/* Button styling */
+.map-container .download-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #28a745; /* Green button background */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for the button */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add hover effects */
+}
+
+.map-container .download-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 @media screen and (max-width: 768px) {
@@ -438,8 +461,12 @@ body {
     .map-container iframe {
         height: 300px; /* Reduce map height for smaller screens */
     }
-}
 
+    .map-container .download-button {
+        padding: 10px 15px;
+        font-size: 14px; /* Reduce font size for smaller screens */
+    }
+}
 
 
 
@@ -753,7 +780,28 @@ body {
     max-width: 100%; /* Ensures responsiveness on smaller screens */
     height: auto; /* Maintains aspect ratio */
 }
+/* Green Button Styling */
+.broButton button {
+    background-color: #28a745; /* Green color */
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    width: auto; /* Make the width fit the text content */
+    min-width: 150px; /* Ensure a minimum width for consistent design */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Centers the button */
+}
 
+.broButton button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
 
 /* Responsive Adjustments for Large Screens */
 @media (min-width: 1024px) {
@@ -804,11 +852,40 @@ body {
 
 /* How It Works Section */
 .how-it-works {
-    padding: 60px 20px; /* Increased padding for more space */
+    padding: 40px 20px; /* Slightly increased padding for more spacing */
     background-color: #333;
     color: black;
     text-align: center;
 }
+
+/* Steps Container */
+.how-it-works .steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items */
+    gap: 20px; /* Slightly increased spacing between steps */
+}
+
+/* Individual Step */
+.how-it-works .step {
+    max-width: 200px; /* Slightly larger width for each step */
+    text-align: center;
+}
+
+/* Step Images */
+.how-it-works .step img {
+    width: 100px; /* Slightly larger size for icons */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Increased space below the image */
+}
+
+/* Step Headings */
+.how-it-works .step h3 {
+    font-size: 16px; 
+    line-height: 1.5; 
+    margin: 10px 0; 
+}
+
 
 /* Strategic Location Section */
 .strategic-location p {
@@ -1093,36 +1170,6 @@ h4 {
 
 
 /* Contact Section */
-/* Important Notice Styling */
-.important-notice {
-    background-color: #fffae6;
-    border: 1px solid #ffd700;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px auto;
-    text-align: center;
-    max-width: 800px;
-}
-
-.important-notice h3 {
-    font-size: 1.3rem;
-    color: #d35400;
-    margin-bottom: 10px;
-}
-
-.important-notice img {
-    max-width: 100%; /* Ensures the image is responsive */
-    height: auto;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-.important-notice p {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #333;
-}
-
 .contact-section {
     background-color: #f9f9f9;
     padding: 40px;
@@ -1133,91 +1180,82 @@ h4 {
     text-align: center;
 }
 
-#contact-us h2 {
-    color:black
-    }
-    
-#contact-us p{
-    color: black;
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
 }
 
+.contact-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
 
 .contact-forms-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    margin-top: 20px;
 }
 
-.contact-form {
+/* Contact Form */
+.contact-form, .whatsapp-section {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    flex: 1 1 300px; /* Flexible with a minimum width of 300px */
+    flex: 1 1 300px;
     max-width: 420px;
 }
 
-.contact-form h3 {
-    margin-bottom: 20px;
+.contact-form h3, .whatsapp-section h3 {
+    margin-bottom: 15px;
     font-size: 1.5rem;
     color: #333;
 }
 
-.form-group {
+.contact-form .form-group {
     margin-bottom: 15px;
     text-align: left;
 }
 
-.form-group label {
+.contact-form .form-group label {
     font-weight: bold;
     color: #333;
     display: block;
     margin-bottom: 5px;
 }
 
-.form-group input,
-.form-group select {
+.contact-form .form-group input,
+.contact-form .form-group select {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-button[type="submit"],
-button {
+button[type="submit"], button {
     padding: 12px;
     font-size: 1.1rem;
     font-weight: bold;
     color: white;
-    background-color: #004aad;
+    background-color: #25d366;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
+    margin-top: 10px;
 }
 
-button[type="submit"]:hover,
-button:hover {
-    background-color: #003377;
-}
-
-.error-message {
-    color: red;
-    font-size: 0.875rem;
-    margin-top: 5px;
+button[type="submit"]:hover, button:hover {
+    background-color:#25d366;
 }
 
 /* WhatsApp Section */
-.whatsapp-section {
-    margin-top: 30px;
-    text-align: center;
-}
-
 .whatsapp-section p {
     font-size: 1rem;
     margin-bottom: 10px;
@@ -1239,7 +1277,6 @@ button:hover {
 .whatsapp-section button:hover {
     background-color: #1da851; /* Darker green on hover */
 }
-
 
 /* Responsive Styling */
 @media (max-width: 768px) {
