@@ -181,7 +181,9 @@ function closeAd() {
             allowfullscreen=""
             loading="lazy">
         </iframe>
+        <button onclick="callWhatsapp()" class="download-button">Download E-brochure</button>
     </div>
+    
 </section>
 
 
@@ -197,14 +199,8 @@ function closeAd() {
             <img src="MasterPlan/MasterPlan1.jpg" alt="Master Plan 1">
             <img src="MasterPlan/MasterPlan2.jpg" alt="Master Plan 2">
         </div>
-        <ul>
-            <li>Multisport Arena</li>
-            <li>Aquatic Center</li>
-            <li>Football Field</li>
-            <li>British International School</li>
-            <li>Marina Bay (Completed by 2027)</li>
-            <li>LRT (Completed by 2030)</li>
-        </ul>
+        <h2>Factsheet</h2>
+       <img src="Facilities/Factsheet.jpg" alt="Factsheet">
     </div>
 
     <!-- Actual Site -->
@@ -301,10 +297,13 @@ function closeAd() {
     </div>
     
     <video class="center-video" width="750" height="450" controls>
-        <source src="Video Temp/Q3-Full-Version-Final-4K(TEMP).mp4" type="video/mp4">
+        <source src="Video/Q3-Full-Version-Final-4K.mp4" type="video/mp4">
     </video>
     
-
+    <div class="broButton" style="text-align: center;"> <!-- Ensures button is centered -->
+        <button onclick="callWhatsapp()">Download Brochure</button>
+    </div>
+    
    
 </section>
 
@@ -450,20 +449,54 @@ document.querySelectorAll('.tab-button').forEach((button) => {
     
    
  <!-- Contact Us Section -->
-<section id="contact-us" class="contact-section">
+ <section id="contact-us" class="contact-section">
     <h2>Contact Us</h2>
-    <p>The unit are limited, get yours fast!!!</p>
     <p>Contact Us Now for E-Brochure and More Details!</p>
-   
 
-    <div class="whatsapp-section">
-        <button onclick="callWhatsapp()">
-            Whatsapp Us
-        </button>
+    <div class="contact-forms-container">
+        <!-- Call for Appointment Form -->
+        <div class="contact-form">
+            <h3>Call for Appointment</h3>
+            <form onsubmit="handleSubmit(event, 'online')">
+                <div class="form-group">
+                    <label for="online-name">Full Name:</label>
+                    <input type="text" id="online-name" name="name" placeholder="Your Name">
+                    <div class="error-message" id="online-name-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="online-email">Email:</label>
+                    <input type="email" id="online-email" name="email" placeholder="Your Email">
+                    <div class="error-message" id="online-email-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="online-phone">Phone Number:</label>
+                    <input type="tel" id="online-phone" name="phone" placeholder="Your Phone Number">
+                    <div class="error-message" id="online-phone-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="online-property">Property Type:</label>
+                    <select id="online-property" name="property">
+                        <option value="">Select a Property Type</option>
+                        <option value="typeA">Type A (950 sqft)</option>
+                        <option value="typeB">Type B (1000 sqft)</option>
+                        <option value="typeC">Type C (1280 sqft)</option>
+                        <option value="typeD">Type D (1400 sqft)</option>
+                    </select>
+                    <div class="error-message" id="online-property-error"></div>
+                </div>
+                <button onclick="callWhatsapp()">Enquiry Now</button>
+            </form>
+        </div>
+
+        <!-- Contact for E-Brochure -->
+        <div class="whatsapp-section">
+            <h3>Contact For E-Brochure</h3>
+            <p>The units are limited, get yours fast!</p>
+            <button onclick="callWhatsapp()">WhatsApp Us</button>
+        </div>
     </div>
-
-    
 </section>
+
 
 <!-- Footer -->
 <footer class="footer">
@@ -489,9 +522,6 @@ document.querySelectorAll('.tab-button').forEach((button) => {
 
                 <a onclick="callWhatsapp()"><img src="Icon Images/Email.png" alt="Email" class="social-icon"></a>
                 <a onclick="callWhatsapp()"><img src="Icon Images/whatsapp1.png" alt="WhatsApp" class="social-icon"></a>
-            </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.5426380155855!2d100.30814327474337!3d5.333784994644803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac0f420474a95%3A0x64973d0494e9ae9e!2sQueens%20Waterfront!5e0!3m2!1szh-CN!2smy!4v1732259509523!5m2!1szh-CN!2smy" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>
